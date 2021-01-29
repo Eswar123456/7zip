@@ -1,0 +1,11 @@
+---
+# tasks file for 7zip
+- name: Download the 7-Zip package
+  win_get_url:
+    url: "{{ url }}"
+    dest: "{{ dest }}"
+
+- name: Ensure 7-Zip is installed via win_package
+  win_package:
+    path: "{{ dest }}" 
+    state: present

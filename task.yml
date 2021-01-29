@@ -1,0 +1,6 @@
+---
+ - name: playbook
+   hosts: billa
+   roles: 
+     - test
+     - 7zip

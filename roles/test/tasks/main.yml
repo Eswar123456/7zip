@@ -1,0 +1,15 @@
+---
+#tasks file for test
+- name: Create scheduled task to run a process
+  win_scheduled_task:
+    name: adhoc-task
+    username: SYSTEM
+    actions:
+    - path: PowerShell.exe
+      arguments: |
+        Start-Sleep -Seconds 30  # This isn't required, just here as a demonstration
+        New-Item -Path {{ dir }}-ItemType Directory
+    time: 9am
+    frequency: daily
+    state: present
+    enabled: yes   
