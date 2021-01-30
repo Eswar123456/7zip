@@ -5,6 +5,7 @@
     url: "{{ url }}"
     dest: "{{ dest }}"
 
+# task file installation
 - name: Ensure 7-Zip is installed via win_package
   win_package:
     path: "{{ dest }}" 
